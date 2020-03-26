@@ -22,12 +22,11 @@
  *
  */
 
- const HDWallet = require('truffle-hdwallet-provider');
- const infuraKey = "4828edf2eb5545c696374078c217fa19";
+const HDWalletProvider = require('truffle-hdwallet-provider');
+const infuraKey = "<Infura ProjectID>";
 //
 // const fs = require('fs');
-const mnemonic = "dizzy cargo reform stone jaguar glory must flavor more orange toe oven";
-
+const mnemonic = "<METAMASK SEED>";
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -51,8 +50,8 @@ module.exports = {
       port: 9545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
     },
-    rinkeby: {
-      provider: () => new HDWallet(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`),
+     rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`),
         network_id: 4,       // rinkeby's id
         gas: 4500000,        // rinkeby has a lower block limit than mainnet
         gasPrice: 10000000000
